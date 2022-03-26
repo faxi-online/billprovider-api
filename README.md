@@ -45,3 +45,34 @@ The response will be a JSON with those properties:
     "amount": 999
 }
 ```
+
+## Get BillProvider status
+You can get the status of your bill doing a GET request following the specification below.
+
+### URL
+In test you must do GET to the URL below,
+where 1 is the BillProvider id created in Faxi.
+```
+https://test.faxi.online/api/bill-provider/1
+```
+
+### Headers
+To authenticate with the API you should send
+the token provided by Faxi in HTTP Header
+- Authorization: token
+
+### Response
+The response will be a JSON with those properties:
+- *status* - the status of payment where 1 = success, 0 = pending
+```json
+{
+    "success": "true",
+    "message": "Bill object Found",
+    "id": 2,
+    "entity": 4,
+    "reference": 2,
+    "amount": "999.00",
+    "status": 0,
+    "paid_at": null
+}
+```
